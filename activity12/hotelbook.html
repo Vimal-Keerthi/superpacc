@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PVPSIT Tourism</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="font/fonts.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/utility.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: transparent;
+            padding: 1rem 0;
+            z-index: 999;
+        }
+        
+        .navbar .container {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        
+        .site-brand {
+            color: #fff;
+            font-size: 2.4rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+        
+        .site-brand span {
+            font-weight: 300;
+        }
+        
+        #navbar-show-btn {
+            background: transparent;
+            color: #fff;
+            font-size: 2rem;
+            opacity: 0.9;
+            -webkit-transition: var(--trans);
+            -o-transition: var(--trans);
+            transition: var(--trans);
+            border: none;
+        }
+        
+        #navbar-show-btn:hover {
+            opacity: 1;
+        }
+        /* navbar side menu */
+        
+        #navbar-collapse {
+            background-color: var(--green);
+            position: fixed;
+            top: 0;
+            right: -100;
+            width: 300px;
+            height: 100%;
+            padding: 2rem;
+            -webkit-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+            transform: translateX(100%);
+            -webkit-transition: var(--trans);
+            -o-transition: var(--trans);
+            transition: var(--trans);
+        }
+        
+        .navbar-collapse-rmw {
+            /* js related */
+            -webkit-transform: translateX(0)!important;
+            -ms-transform: translateX(0)!important;
+            transform: translateX(0)!important;
+        }
+        
+        #navbar-close-btn {
+            background: none;
+            color: #fff;
+            width: 35px;
+            height: 35px;
+            border-radius: 0.2rem;
+            font-size: 2rem;
+            -webkit-transition: var(--trans);
+            -o-transition: var(--trans);
+            transition: var(--trans);
+            position: absolute;
+            right: 1rem;
+            top: 2rem;
+            border: none;
+        }
+        
+        .navbar-nav {
+            margin-top: 5rem;
+        }
+        
+        .nav-item {
+            margin: 1.6rem 0;
+        }
+        
+        .nav-link {
+            color: #fff;
+            font-size: 1.2rem;
+            -webkit-transition: var(--trans);
+            -o-transition: var(--trans);
+            transition: var(--trans);
+        }
+        
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+    <section>
+        <nav class="navbar">
+            <div class="container flex">
+                <a href="index.html" class="site-brand"> PVPSIT<span>Tourism</span> </a>
+
+                <button type="button" id="navbar-show-btn" class="flex">
+          <i class="fas fa-bars"></i>
+        </button>
+                <div id="navbar-collapse">
+                    <button type="button" id="navbar-close-btn" class="flex">
+            <i class="fas fa-times"></i>
+          </button>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="gallery.html" class="nav-link">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="heritage.html" class="nav-link">Heritage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="hotelbook.html" class="nav-link">Hotel Booking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="flex header-sm">
+            <div class="container">
+                <div class="header-title">
+                    <h1>Hotel Booking</h1>
+                </div>
+            </div>
+        </header>
+    </section>
+    <section>
+        <div id="booking" class="section">
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="booking-form">
+                            <div class="form-header">
+                                <h1>Make your reservation</h1>
+                            </div>
+                            <form>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Country, ZIP, city..." />
+                                    <span class="form-label">Destination</span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input class="form-control" type="date" required />
+                                            <span class="form-label">Check In</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input class="form-control" type="date" required />
+                                            <span class="form-label">Check out</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select class="form-control" required>
+                          <option value="" selected hidden>no of rooms</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                                            <span class="select-arrow"></span>
+                                            <span class="form-label">Rooms</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select class="form-control" required>
+                          <option value="" selected hidden>no of adults</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                                            <span class="select-arrow"></span>
+                                            <span class="form-label">Adults</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select class="form-control" required>
+                          <option value="" selected hidden>
+                            no of children
+                          </option>
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                                            <span class="select-arrow"></span>
+                                            <span class="form-label">Children</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input class="form-control" type="email" placeholder="Enter your Email" />
+                                            <span class="form-label">Email</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input class="form-control" type="tel" placeholder="Enter you Phone" />
+                                            <span class="form-label">Phone</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-btn">
+                                    <button class="submit-btn">Book Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-4">
+        <div class="container footer-row">
+            <div class="footer-item">
+                <a href="index.html" class="site-brand">
+            PVPSIT<span>Tourism</span>
+          </a>
+                <p class="text">​The New Way To Travel</p>
+            </div>
+
+            <div class="footer-item">
+                <h2>Follow us on:</h2>
+                <ul class="social-links">
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-google-plus"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <h2>Popular Places:</h2>
+                <ul>
+                    <li><a href="#">The Taj Mahal, Agra</a></li>
+                    <li><a href="#">The Holy City of Varanasi</a></li>
+                    <li><a href="#">The Red Fort, New Delhi</a></li>
+                    <li><a href="#">Mecca Masjid, Hyderabad</a></li>
+                    <li><a href="#">Amer Fort, Jaipur</a></li>
+                </ul>
+            </div>
+
+            <div class="subscribe-form footer-item">
+                <h2>Subscribe for Newsletter!</h2>
+                <form class="flex">
+                    <input type="email" placeholder="Enter Email" class="form-control" />
+                    <input type="submit" class="btn" value="Subscribe" />
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        function validateForm() {
+            if (isEmpty(document.getElementById("data_2").value.trim())) {
+                alert("First name is required!");
+                return false;
+            }
+            if (isEmpty(document.getElementById("data_3").value.trim())) {
+                alert("Last name is required!");
+                return false;
+            }
+            if (isEmpty(document.getElementById("data_4").value.trim())) {
+                alert("Phone is required!");
+                return false;
+            }
+            if (isEmpty(document.getElementById("data_5").value.trim())) {
+                alert("Email is required!");
+                return false;
+            }
+            if (!validateEmail(document.getElementById("data_5").value.trim())) {
+                alert("Email must be a valid email address!");
+                return false;
+            }
+            if (isEmpty(document.getElementById("data_6").value.trim())) {
+                alert("Arrival date is required!");
+                return false;
+            }
+            if (isEmpty(document.getElementById("data_7").value.trim())) {
+                alert("Departure date is required!");
+                return false;
+            }
+            if (isEmpty(document.getElementById("data_8").value.trim())) {
+                alert("Number of adults is required!");
+                return false;
+            }
+            return true;
+        }
+
+        function isEmpty(str) {
+            return str.length === 0 || !str.trim();
+        }
+
+        function validateEmail(email) {
+            var re =
+                /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+            return isEmpty(email) || re.test(email);
+        }
+    </script>
+</body>
+
+</html>
